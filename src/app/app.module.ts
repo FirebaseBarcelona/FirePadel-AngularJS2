@@ -9,6 +9,7 @@ import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import {MdToolbarModule} from "@angular2-material/toolbar";
 import {MdCardModule} from "@angular2-material/card";
+import {MdIconModule, MdIconRegistry} from "@angular2-material/icon";
 
 @NgModule({
   declarations: [
@@ -21,10 +22,13 @@ import {MdCardModule} from "@angular2-material/card";
     BrowserModule,
     MdToolbarModule,
     MdCardModule,
+    MdIconModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    MdIconRegistry
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
