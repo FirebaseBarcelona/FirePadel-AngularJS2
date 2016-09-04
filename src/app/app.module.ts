@@ -8,6 +8,7 @@ import { CourtComponent } from './court/court.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import {MdToolbarModule} from "@angular2-material/toolbar";
+import {MdCardModule} from "@angular2-material/card";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {MdToolbarModule} from "@angular2-material/toolbar";
   imports: [
     BrowserModule,
     MdToolbarModule,
+    MdCardModule,
     FormsModule,
     HttpModule
   ],
