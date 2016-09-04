@@ -8,22 +8,10 @@ import {AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private user: any = {};
+  user = {};
 
   constructor(public af: AngularFire) {
-    this.observeLogin();
-  }
-
-  observeLogin() {
-    console.log('Observe');
-    this.af.auth.subscribe(user => {
-      console.log(`--> ${user}`);
-      if (user) {
-        this.user = user;
-      } else {
-        this.user = null;
-      }
-    });
+    this.af.auth.subscribe(auth => console.log(auth));
   }
 
   public login(): void {

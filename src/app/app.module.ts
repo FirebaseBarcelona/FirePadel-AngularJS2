@@ -11,7 +11,6 @@ import {MdCardModule} from '@angular2-material/card';
 import {MdIconModule, MdIconRegistry} from '@angular2-material/icon';
 import {MdButtonModule} from '@angular2-material/button';
 import {AngularFireModule} from 'angularfire2';
-import * as firebase from 'firebase';
 
 
 export const firebaseConfig = {
