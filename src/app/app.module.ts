@@ -10,6 +10,7 @@ import { ChatMessageComponent } from './chat-message/chat-message.component';
 import {MdToolbarModule} from "@angular2-material/toolbar";
 import {MdCardModule} from "@angular2-material/card";
 import {MdIconModule, MdIconRegistry} from "@angular2-material/icon";
+import {MdButtonModule} from "@angular2-material/button";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {MdIconModule, MdIconRegistry} from "@angular2-material/icon";
   imports: [
     BrowserModule,
     MdToolbarModule,
+    MdButtonModule,
     MdCardModule,
     MdIconModule,
     FormsModule,
