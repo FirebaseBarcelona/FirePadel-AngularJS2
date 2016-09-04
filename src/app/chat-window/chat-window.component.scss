@@ -1,0 +1,74 @@
+.chat-window-component {
+  $chat-height: 600px;
+  $chat-width: 400px;
+  & {
+    background-color: #eceff1;
+    width: 400px;
+    padding: 0 0 10px 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: $chat-height;
+  }
+  .chat-window-header {
+    position: absolute;
+    box-sizing: border-box;
+    top: -38px;
+    left: 0;
+    width: 400px;
+    height: 38px;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #3f51b5;
+    line-height: 38px;
+    padding-left: 15px;
+    text-align: center;
+  }
+  .chat-window-container {
+    position: absolute;
+    width: $chat-width;
+    height: $chat-height;
+  }
+  .chat-messages-container {
+    position: relative;
+    overflow-y: scroll;
+    height: ($chat-height - 60px);
+  }
+  md-input-container {
+    & {
+      display: block;
+      width: calc(100% - 20px);
+      margin-top: 10px;
+      padding-bottom: 5px;
+    }
+    input {
+      display: inline-block !important;
+      width: calc(100% - 34px) !important;
+      vertical-align: top;
+    }
+    md-icon {
+      & {
+        display: inline-block !important;
+        position: relative;
+        vertical-align: middle;
+        line-height: 30px !important;
+        color: #9d9b99 !important;
+        fill: #9d9b99;
+        cursor: not-allowed;
+        user-select: none;
+        outline: none;
+        left: 10px !important;
+        top: 0 !important;
+      }
+      &:hover {
+        opacity: .9;
+      }
+      &.active {
+        cursor: pointer;
+        color: #3f51b5 !important;
+        fill: #3f51b5;
+      }
+    }
+  }
+}
