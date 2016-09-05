@@ -1,17 +1,25 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {AngularFire} from "angularfire2/es6/angularfire2";
 
 describe('App: FirePadel', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      providers:[
+        AngularFire
+      ],
       declarations: [
         AppComponent
       ],
     });
   });
-
+  it('should init an empty user object', async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app.user).toBe({});
+  }));
   it('should create the app', async(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
