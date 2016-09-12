@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthService} from "./auth.service";
+import {AuthService} from './auth.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import {AuthService} from "./auth.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public user;
+  public user = {};
 
   constructor(public authService: AuthService) {
     this.authService = authService;
@@ -19,13 +19,13 @@ export class AppComponent {
   private subscribeUserAuth() {
     this.authService.getAuth().subscribe(
       authData => {
-        //noinspection TypeScriptUnresolvedVariable
+        // noinspection TypeScriptUnresolvedVariable
         this.user = {
           name: authData.google.displayName,
           id: authData.google.uid,
           email: authData.google.email,
           avatar: authData.google.photoURL,
-        }
+        };
       }
     );
   }
