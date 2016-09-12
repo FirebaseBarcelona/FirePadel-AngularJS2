@@ -1,27 +1,42 @@
 import {Component} from '@angular/core';
-import {AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
+import {AuthService} from "./auth.service";
 
 
 @Component({
   selector: 'app-root',
+  providers: [AuthService],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  user = {};
+  public user;
 
-  constructor(public af: AngularFire) {
-    this.af.auth.subscribe(auth => console.log(auth));
+  constructor(public authService: AuthService) {
+    this.authService = authService;
+    this.subscribeUserAuth();
   }
 
+  private subscribeUserAuth() {
+    this.authService.getAuth().subscribe(
+      authData => {
+        //noinspection TypeScriptUnresolvedVariable
+        this.user = {
+          name: authData.google.displayName,
+          id: authData.google.uid,
+          email: authData.google.email,
+          avatar: authData.google.photoURL,
+        }
+      }
+    );
+  }
+
+
   public login(): void {
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    });
+    this.authService.login();
   }
 
   public logout(): void {
-    this.af.auth.logout();
+
   }
+
 }
